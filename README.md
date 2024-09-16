@@ -59,12 +59,46 @@ python mazeSolver.py
     - `+`: Final solution path (green)
   - The visualization updates in real-time, showing how BFS explores the maze and eventually finds the shortest path.
 
-## Example Flow:
+## Functions Overview
 
-1. The maze is initialized with walls.
-2. DFS carves out a random, solvable maze.
-3. BFS explores the maze, marking its progress.
-4. Once BFS reaches the end, it traces back the shortest path and marks it with `+`.
+### 1. `generate_maze(height, width)`
+Generates a random solvable maze using DFS:
+- **Parameters**: 
+  - `height`: Height of the maze.
+  - `width`: Width of the maze.
+- **Returns**: A 2D list representing the maze grid with walls (`#`) and paths (` `).
+
+### 2. `find_node(maze, node)`
+Finds the coordinates of a given node (`S`, `X`):
+- **Parameters**: 
+  - `maze`: 2D list representing the maze.
+  - `node`: The character to find in the maze (e.g., 'S' for start, 'X' for end).
+- **Returns**: Coordinates `(row, col)` of the node if found.
+
+### 3. `transform_to_graph(maze)`
+Transforms the maze into a graph where nodes represent open paths (` `):
+- **Parameters**: 
+  - `maze`: 2D list representing the maze.
+- **Returns**: A dictionary where each key is a cell (a tuple of coordinates) and the value is a list of neighboring cells (as tuples).
+
+### 4. `solve_maze(maze, graph, start_node, end_node, ax)`
+Solves the maze using BFS, displaying the exploration process in real-time:
+- **Parameters**: 
+  - `maze`: The maze grid as a 2D list.
+  - `graph`: The maze as a graph (generated from `transform_to_graph`).
+  - `start_node`: Coordinates of the start point (`S`).
+  - `end_node`: Coordinates of the end point (`X`).
+  - `ax`: Matplotlib axis for visualization.
+- **Returns**: The maze with the shortest path marked by `+`.
+
+### 5. `visualize_maze(maze, ax, title="Maze")`
+Visualizes the maze in real-time using Matplotlib:
+- **Parameters**: 
+  - `maze`: The maze grid.
+  - `ax`: Matplotlib axis for plotting the maze.
+  - `title`: The title of the plot (optional).
+- **Description**: This function uses a color-coded map to represent walls, paths, the start, and end points, and the BFS exploration. It updates the plot in real-time as BFS progresses.
+
 
 
 
