@@ -23,7 +23,7 @@ This project generates a random, solvable maze using **Depth-First Search (DFS)*
    Install the required libraries via pip:
    ```bash
    pip install matplotlib numpy
-
+```
 ## Run the Project
 
 Execute the script to generate and solve the maze:
