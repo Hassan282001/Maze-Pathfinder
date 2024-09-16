@@ -21,14 +21,12 @@ This project generates a random, solvable maze using **Depth-First Search (DFS)*
 
 1. **Install Dependencies**:
    Install the required libraries via pip:
-   ```bash
    pip install matplotlib numpy
-```
+   
 ## Run the Project
 
 Execute the script to generate and solve the maze:
 
-```bash
 python mazeSolver.py
 # How It Works
 
